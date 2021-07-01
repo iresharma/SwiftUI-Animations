@@ -51,6 +51,13 @@ struct SpinAnim: View {
                 }
             }.padding()
             Stepper("Change angle: \(changeAngle)", value: $changeAngle, step: 60).padding()
+            Button("Flick") {
+                withAnimation(Animation.linear(duration: 1)) {
+                        self.axisX = 2.0
+                        self.axisY = 1.0
+                        self.animationAmount += 720
+                }
+            }
         }
     }
 }
